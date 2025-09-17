@@ -3,221 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Thiếp Điện Tử - Nguyễn Khắc Tiến</title>
-    <!-- Tích hợp Tailwind CSS -->
+    <title>Danh Thiếp Điện Tử - Ameii Việt Nam</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tích hợp Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Sử dụng font Inter làm font chữ mặc định */
         body {
             font-family: 'Inter', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1887&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
         }
-        /* Hiệu ứng mượt mà khi chuyển đổi */
-        .transition-all-smooth {
-            transition: all 0.3s ease-in-out;
+        .backdrop-blur-custom {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
-        /* Màu sắc thương hiệu Ameii */
-        .ameii-green { background-color: #00592D; }
-        .ameii-green-text { color: #00592D; }
-        .hover\:ameii-green-dark:hover { background-color: #004422; }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4">
+<body class="flex items-center justify-center min-h-screen p-4">
 
-    <div class="w-full max-w-sm bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
-        <div class="relative">
-            <!-- Ảnh bìa -->
-            <img class="w-full h-28 object-cover" src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1887&auto=format&fit=crop" alt="Ảnh bìa nông sản">
-            <!-- Logo Ameii -->
-            <div class="w-28 h-28 p-2 bg-white rounded-full border-4 border-white dark:border-gray-800 absolute -bottom-14 left-1/2 -translate-x-1/2 flex items-center justify-center">
-                <img class="w-full h-auto" src="logo ameii (chuan)-04.png" alt="Logo Ameii Việt Nam">
-            </div>
-        </div>
+    <div class="w-full max-w-sm bg-white/80 backdrop-blur-custom dark:bg-gray-800/80 rounded-2xl shadow-xl overflow-hidden text-center p-8">
         
-        <!-- Phần thông tin cơ bản -->
-        <div class="pt-20 pb-6 px-6 text-center">
-            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Nguyễn Khắc Tiến</h1>
-            <p class="text-md text-gray-600 dark:text-gray-400 mt-1">Chủ tịch HĐQT</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Công ty CP Ameii Việt Nam</p>
+        <!-- Logo Ameii -->
+        <div class="mx-auto mb-6 flex items-center justify-center">
+            <img class="w-40 h-auto" src="logo ameii (chuan)-04.png" alt="Logo Ameii Việt Nam">
         </div>
 
-        <!-- Phần các nút hành động -->
-        <div class="flex justify-center gap-4 px-6 pb-6">
-            <button id="save-contact-btn" class="flex-1 ameii-green hover:ameii-green-dark text-white font-semibold py-2 px-4 rounded-lg transition-all-smooth flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                Lưu Danh Bạ
-            </button>
-            <button id="share-btn" class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold py-2 px-4 rounded-lg transition-all-smooth flex items-center justify-center gap-2">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>
-                Chia Sẻ
-            </button>
-        </div>
-        
-        <!-- Phần thông tin liên hệ chi tiết -->
-        <div class="px-6 pb-6 border-t border-gray-200 dark:border-gray-700 pt-6">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Thông tin liên hệ</h3>
-            <div class="space-y-4">
-                <a href="tel:+84835588988" class="flex items-center text-gray-600 dark:text-gray-300 hover:ameii-green-text dark:hover:text-yellow-300 group">
-                    <div class="w-8 h-8 flex-shrink-0 mr-4 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:ameii-green-text dark:group-hover:text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <span>(+84) 835 588 988</span>
-                </a>
-                <a href="mailto:tiennk@ameii.vn" class="flex items-center text-gray-600 dark:text-gray-300 hover:ameii-green-text dark:hover:text-yellow-300 group">
-                    <div class="w-8 h-8 flex-shrink-0 mr-4 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:ameii-green-text dark:group-hover:text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <span>tiennk@ameii.vn</span>
-                </a>
-                <a href="https://ameii.vn" target="_blank" class="flex items-center text-gray-600 dark:text-gray-300 hover:ameii-green-text dark:hover:text-yellow-300 group">
-                    <div class="w-8 h-8 flex-shrink-0 mr-4 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:ameii-green-text dark:group-hover:text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7-7l-1.72 1.72"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7 7l1.72-1.72"/></svg>
-                    </div>
-                    <span>ameii.vn</span>
-                </a>
-                <div class="flex items-start text-gray-600 dark:text-gray-300 group">
-                     <div class="w-8 h-8 flex-shrink-0 mr-4 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <span class="text-left">Số 8 đường 2.3, KĐT Gamuda Garden, Hoàng Mai, Hà Nội</span>
-                </div>
-            </div>
-        </div>
+        <h1 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Danh thiếp điện tử</h1>
+        <p class="text-gray-600 dark:text-gray-300 mb-8">Vui lòng chọn danh thiếp bạn muốn xem.</p>
 
-        <!-- Mã QR -->
-        <div class="px-6 py-8 bg-gray-50 dark:bg-gray-700/50 flex flex-col items-center gap-4">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Quét để kết nối</h3>
-            <div id="qrcode-container" class="p-2 bg-white rounded-lg shadow-md">
-                 <img id="qrcode" src="" alt="Mã QR" class="w-32 h-32">
-            </div>
-        </div>
-    </div>
-    
-    <!-- Thông báo nhỏ (toast) -->
-    <div id="toast" class="fixed bottom-5 right-5 bg-gray-900 text-white py-2 px-5 rounded-lg shadow-lg opacity-0 translate-y-10 transition-all duration-300">
-        Đã sao chép link!
-    </div>
-
-    <script>
-        // --- PHẦN CẤU HÌNH ---
-        const contact = {
-            firstName: 'Tiến',
-            lastName: 'Nguyễn Khắc',
-            fullName: 'Nguyễn Khắc Tiến',
-            title: 'Chủ tịch HĐQT',
-            organization: 'Công ty CP Ameii Việt Nam',
-            phone: '+84835588988',
-            email: 'tiennk@ameii.vn',
-            website: 'https://ameii.vn',
-            address: {
-                street: 'Số 8 đường 2.3 KĐT Gamuda Garden',
-                city: 'Hoàng Mai',
-                state: 'Hà Nội',
-                country: 'Việt Nam'
-            }
-        };
-
-        // --- PHẦN LOGIC ---
-        document.addEventListener('DOMContentLoaded', function() {
-            const saveContactBtn = document.getElementById('save-contact-btn');
-            const shareBtn = document.getElementById('share-btn');
-            const qrCodeImg = document.getElementById('qrcode');
-            const toast = document.getElementById('toast');
-
-            // 1. Chức năng tạo và tải file VCF (vCard)
-            function generateVCard() {
-                const vCard = `BEGIN:VCARD
-VERSION:3.0
-N:${contact.lastName};${contact.firstName};;;
-FN:${contact.fullName}
-TITLE:${contact.title}
-ORG:${contact.organization}
-TEL;TYPE=WORK,VOICE:${contact.phone}
-EMAIL:${contact.email}
-URL:${contact.website}
-ADR;TYPE=WORK:;;${contact.address.street};${contact.address.city};${contact.address.state};;${contact.address.country}
-END:VCARD`;
-
-                const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `danh-thiep-nguyen-khac-tien.vcf`;
-                
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-
-            saveContactBtn.addEventListener('click', generateVCard);
-
-            // 2. Chức năng chia sẻ (sử dụng Web Share API nếu có, fallback là copy link)
-            async function shareCard() {
-                const shareData = {
-                    title: `Danh thiếp của ${contact.fullName}`,
-                    text: `Đây là danh thiếp điện tử của ${contact.fullName}, Chủ tịch HĐQT Công ty CP Ameii Việt Nam.`,
-                    url: window.location.href
-                };
-
-                const copyToClipboardFallback = () => {
-                    // Sử dụng document.execCommand để tương thích tốt hơn trong iframe
-                    const textArea = document.createElement("textarea");
-                    textArea.value = window.location.href;
-                    textArea.style.position = "fixed"; // Ngăn cuộn trang khi focus
-                    textArea.style.left = "-9999px";
-                    document.body.appendChild(textArea);
-                    textArea.focus();
-                    textArea.select();
-                    try {
-                        document.execCommand('copy');
-                        toast.textContent = "Đã sao chép link!";
-                        toast.classList.remove('opacity-0', 'translate-y-10');
-                        setTimeout(() => {
-                            toast.classList.add('opacity-0', 'translate-y-10');
-                        }, 2000);
-                    } catch (err) {
-                        console.log('Không thể sao chép link:', err);
-                        toast.textContent = "Lỗi sao chép!";
-                        toast.classList.remove('opacity-0', 'translate-y-10');
-                        setTimeout(() => {
-                            toast.classList.add('opacity-0', 'translate-y-10');
-                        }, 2000);
-                    }
-                    document.body.removeChild(textArea);
-                };
-
-                if (navigator.share) {
-                    try {
-                        await navigator.share(shareData);
-                    } catch (err) {
-                        // Thay vì báo lỗi đỏ, chỉ ghi log và chuyển sang fallback
-                        console.log("Tính năng chia sẻ không khả dụng, chuyển sang sao chép link. Lỗi:", err.name);
-                        copyToClipboardFallback();
-                    }
-                } else {
-                    // Nếu trình duyệt không hỗ trợ API, dùng fallback
-                    copyToClipboardFallback();
-                }
-            }
+        <!-- Danh sách lựa chọn -->
+        <div class="space-y-4">
+            <a href="tien-nk.html" class="block w-full bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h2 class="font-bold text-lg text-[#00592D] dark:text-yellow-300">Nguyễn Khắc Tiến</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Chủ tịch HĐQT</p>
+            </a>
             
-            shareBtn.addEventListener('click', shareCard);
+            <a href="hong-ntt.html" class="block w-full bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h2 class="font-bold text-lg text-[#00592D] dark:text-yellow-300">Ngô Thị Thu Hồng</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Tổng Giám đốc</p>
+            </a>
+        </div>
+    </div>
 
-            // 3. Tạo mã QR từ URL hiện tại
-            function generateQRCode() {
-                // Giả định trang web được host, nếu chạy local thì link có thể không truy cập được từ ngoài
-                const pageUrl = window.location.href.startsWith('http') ? window.location.href : 'https://ameii.vn';
-                const currentURL = encodeURIComponent(pageUrl);
-                const qrCodeAPI = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${currentURL}&bgcolor=ffffff&color=00592D`;
-                qrCodeImg.src = qrCodeAPI;
-            }
-
-            generateQRCode();
-        });
-    </script>
 </body>
 </html>
-

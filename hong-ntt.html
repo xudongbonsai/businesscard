@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Thiếp Điện Tử - Ngô Thị Thu Hồng</title>
+    <!-- Tích hợp Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tích hợp Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Font cho tiếng Nhật */
+        [lang="ja"] body, [lang="ja"] {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .transition-all-smooth {
+            transition: all 0.3s ease-in-out;
+        }
+        /* Màu sắc thương hiệu Ameii */
+        .ameii-green { background-color: #00592D; }
+        .ameii-green-text { color: #00592D; }
+        .hover\:ameii-green-dark:hover { background-color: #004422; }
+        /* Kiểu cho nút ngôn ngữ */
+        .lang-btn {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .lang-btn.active {
+            background-color: #00592D;
+            color: white;
+        }
+        .lang-btn:not(.active) {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-sm bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div class="relative">
+            <!-- Ảnh bìa -->
+            <img class="w-full h-28 object-cover" src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1887&auto=format&fit=crop" alt="Ảnh bìa nông sản">
+            
+            <!-- Bộ chuyển đổi ngôn ngữ -->
+            <div id="lang-switcher" class="absolute top-3 right-3 flex space-x-2">
+                <button data-lang="vi" class="lang-btn active">VN</button>
+                <button data-lang="en" class="lang-btn">EN</button>
+                <button data-lang="ja" class="lang-btn">JP</button>
+            </div>
+
+            <!-- Logo Ameii -->
+            <div class="w-28 h-28 p-2 bg-white rounded-full border-4 border-white dark:border-gray-800 absolute -bottom-14 left-1/2 -translate-x-1/2 flex items-center justify-center">
+                <img class="w-full h-auto" src="logo ameii (chuan)-04.png" alt="Logo Ameii Việt Nam">
+            </div>
+        </div>
+        
+        <!-- Phần thông tin cơ bản -->
+        <div class="pt-20 pb-6 px-6 text-center">
+            <h1 id="contact-name" class="text-2xl font-bold text-gray-800 dark:text-white">Ngô Thị Thu Hồng</h1>
+            <p id="contact-title" class="text-md text-gray-600 dark:text-gray-400 mt-1">Tổng Giám đốc</p>
+            <p id="contact-company" class="text-sm text-gray-500 dark:text-gray-400">Công ty CP Ameii Việt Nam</p>
+        </div>
+
+        <!-- Phần các nút hành động -->
+        <div class="flex justify-center gap-4 px-6 pb-6">
+            <button id="save-contact-btn" class="flex-1 ameii-green hover:ameii-green-dark text-white font-semibold py-2 px-4 rounded-lg transition-all-smooth flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span id="btn-save-text">Lưu Danh Bạ</span>
+            </button>
+            <button id="share-btn" class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold py-2 px-4 rounded-lg transition-all-smooth flex items-center justify-center gap-2">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>
+                <span id="btn-share-text">Chia Sẻ</span>
+            </button>
+        </div>
+        
+        <!-- Phần thông tin liên hệ chi tiết -->
+        <div class="px-6 pb-6 border-t border-gray-200 dark:border-gray-700 pt-6">
+            <h3 id="contact-info-title" class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Thông tin liên hệ</h3>
+            <div class="space-y-4">
+                <a href="tel:+84912000898" class="flex items-center text-gray-600 dark:text-gray-300 hover:ameii-green-text dark:hover:text-yellow-300 group">
+                    <div class="w-8 h-8 flex-shrink-0 mr-4 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <span>(+84) 912 000 898</span>
+                </a>
+                <a href="mailto:hongnt@ameii.vn" class="flex items-center text-gray-600 dark:text-gray-300 hover:ameii-green-text dark:hover:text-yellow-300 group">
+                    <div class="w-8 h-8 flex-shrink-0 mr-4 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <span>hongnt@ameii.vn</span>
+                </a>
+                <a href="https://ameii.vn" target="_blank" class="flex items-center text-gray-600 dark:text-gray-300 hover:ameii-green-text dark:hover:text-yellow-300 group">
+                    <div class="w-8 h-8 flex-shrink-0 mr-4 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7-7l-1.72 1.72"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7 7l1.72-1.72"/></svg>
+                    </div>
+                    <span>ameii.vn</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mã QR -->
+        <div class="px-6 py-8 bg-gray-50 dark:bg-gray-700/50 flex flex-col items-center gap-4">
+            <h3 id="scan-to-connect" class="text-lg font-semibold text-gray-800 dark:text-white">Quét để kết nối</h3>
+            <div id="qrcode-container" class="p-2 bg-white rounded-lg shadow-md">
+                 <img id="qrcode" src="" alt="Mã QR" class="w-32 h-32">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Thông báo nhỏ (toast) -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-gray-900 text-white py-2 px-5 rounded-lg shadow-lg opacity-0 translate-y-10 transition-all duration-300">
+        Đã sao chép link!
+    </div>
+
+    <script>
+        // --- PHẦN CẤU HÌNH ---
+        const contact = {
+            firstName: 'Thu Hồng',
+            lastName: 'Ngô Thị',
+            fullName: 'Ngô Thị Thu Hồng',
+            title: 'Tổng Giám đốc',
+            organization: 'Công ty CP Ameii Việt Nam',
+            phone: '+84912000898',
+            email: 'hongnt@ameii.vn',
+            website: 'https://ameii.vn',
+        };
+
+        const translations = {
+            vi: {
+                htmlLang: "vi",
+                name: "Ngô Thị Thu Hồng",
+                title: "Tổng Giám đốc",
+                company: "Công ty CP Ameii Việt Nam",
+                saveContact: "Lưu Danh Bạ",
+                share: "Chia Sẻ",
+                contactInfo: "Thông tin liên hệ",
+                scanToConnect: "Quét để kết nối",
+                copiedToast: "Đã sao chép link!"
+            },
+            en: {
+                htmlLang: "en",
+                name: "Ngo Thi Thu Hong",
+                title: "Chief Executive Officer (CEO)",
+                company: "Ameii Vietnam JSC",
+                saveContact: "Save Contact",
+                share: "Share",
+                contactInfo: "Contact Information",
+                scanToConnect: "Scan to connect",
+                copiedToast: "Link copied!"
+            },
+            ja: {
+                htmlLang: "ja",
+                name: "ゴ・ティ・トゥ・ホン",
+                title: "最高経営責任者 (CEO)",
+                company: "アメイベトナム株式会社",
+                saveContact: "連絡先を保存",
+                share: "共有",
+                contactInfo: "連絡先情報",
+                scanToConnect: "スキャンして接続",
+                copiedToast: "リンクをコピーしました！"
+            }
+        };
+
+        // --- PHẦN LOGIC ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy các element cần thay đổi
+            const htmlTag = document.documentElement;
+            const nameEl = document.getElementById('contact-name');
+            const titleEl = document.getElementById('contact-title');
+            const companyEl = document.getElementById('contact-company');
+            const saveBtnTextEl = document.getElementById('btn-save-text');
+            const shareBtnTextEl = document.getElementById('btn-share-text');
+            const contactInfoTitleEl = document.getElementById('contact-info-title');
+            const scanTitleEl = document.getElementById('scan-to-connect');
+            const toastEl = document.getElementById('toast');
+            const langSwitcher = document.getElementById('lang-switcher');
+
+            // Hàm thay đổi ngôn ngữ
+            function changeLanguage(lang) {
+                const t = translations[lang];
+
+                htmlTag.lang = t.htmlLang;
+                nameEl.textContent = t.name;
+                titleEl.textContent = t.title;
+                companyEl.textContent = t.company;
+                saveBtnTextEl.textContent = t.saveContact;
+                shareBtnTextEl.textContent = t.share;
+                contactInfoTitleEl.textContent = t.contactInfo;
+                scanTitleEl.textContent = t.scanToConnect;
+                toastEl.textContent = t.copiedToast;
+
+                // Cập nhật trạng thái active cho nút ngôn ngữ
+                langSwitcher.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+                
+                // Lưu ngôn ngữ đã chọn
+                localStorage.setItem('preferredLanguage', lang);
+            }
+
+            // Gán sự kiện click cho các nút ngôn ngữ
+            langSwitcher.addEventListener('click', (e) => {
+                if (e.target.matches('.lang-btn')) {
+                    const lang = e.target.dataset.lang;
+                    changeLanguage(lang);
+                }
+            });
+            
+            // Kiểm tra và áp dụng ngôn ngữ đã lưu
+            const savedLang = localStorage.getItem('preferredLanguage') || 'vi';
+            changeLanguage(savedLang);
+
+            // Các chức năng khác
+            const saveContactBtn = document.getElementById('save-contact-btn');
+            const shareBtn = document.getElementById('share-btn');
+            const qrCodeImg = document.getElementById('qrcode');
+
+            function generateVCard() {
+                const vCard = `BEGIN:VCARD
+VERSION:3.0
+N:${contact.lastName};${contact.firstName};;;
+FN:${contact.fullName}
+TITLE:${contact.title}
+ORG:${contact.organization}
+TEL;TYPE=WORK,VOICE:${contact.phone}
+EMAIL:${contact.email}
+URL:${contact.website}
+END:VCARD`;
+                const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `danh-thiep-ngo-thi-thu-hong.vcf`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+            saveContactBtn.addEventListener('click', generateVCard);
+
+            async function shareCard() {
+                const currentLang = localStorage.getItem('preferredLanguage') || 'vi';
+                const shareText = {
+                    vi: `Đây là danh thiếp điện tử của ${contact.fullName}, Tổng Giám đốc Công ty CP Ameii Việt Nam.`,
+                    en: `This is the digital business card of Ngo Thi Thu Hong, CEO of Ameii Vietnam JSC.`,
+                    ja: `こちらはアメイベトナム株式会社のCEO、ゴ・ティ・トゥ・ホン様のデジタル名刺です。`
+                };
+                
+                const shareData = {
+                    title: `Danh thiếp của ${contact.fullName}`,
+                    text: shareText[currentLang],
+                    url: window.location.href
+                };
+                
+                const copyToClipboardFallback = () => {
+                    const textArea = document.createElement("textarea");
+                    textArea.value = window.location.href;
+                    textArea.style.position = "fixed";
+                    textArea.style.left = "-9999px";
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        toastEl.textContent = translations[currentLang].copiedToast;
+                        toastEl.classList.remove('opacity-0', 'translate-y-10');
+                        setTimeout(() => {
+                            toastEl.classList.add('opacity-0', 'translate-y-10');
+                        }, 2000);
+                    } catch (err) {
+                        console.log('Không thể sao chép link:', err);
+                    }
+                    document.body.removeChild(textArea);
+                };
+
+                if (navigator.share) {
+                    try {
+                        await navigator.share(shareData);
+                    } catch (err) {
+                        console.log("Tính năng chia sẻ không khả dụng, chuyển sang sao chép link:", err.name);
+                        copyToClipboardFallback();
+                    }
+                } else {
+                    copyToClipboardFallback();
+                }
+            }
+            shareBtn.addEventListener('click', shareCard);
+
+            function generateQRCode() {
+                const pageUrl = window.location.href.startsWith('http') ? window.location.href : 'https://ameii.vn';
+                const currentURL = encodeURIComponent(pageUrl);
+                const qrCodeAPI = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${currentURL}&bgcolor=ffffff&color=00592D`;
+                qrCodeImg.src = qrCodeAPI;
+            }
+            generateQRCode();
+        });
+    </script>
+</body>
+</html>
